@@ -9,6 +9,7 @@ TagManager:
   - Joueur_pied
   - Tuable_par_saut
   - Ennemi
+  - "\xE9p\xE9e"
   layers:
   - Default
   - TransparentFX

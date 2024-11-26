@@ -14,14 +14,14 @@ public class follow_player : MonoBehaviour
     public float kby;
 
     // Start is called before the first frame update
-    void Start()
+    void Start() // stock la position de départ de l'ennemi
     {
         posdprt = transform.position;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() // permet à l'ennemi de suivre le joueur
     {
         Vector3 posjoueur = GameObject.Find("joueur").transform.position;
 
@@ -40,7 +40,7 @@ public class follow_player : MonoBehaviour
             rb.velocity = new Vector2(-speedennemi, rb.velocity.y);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // permet de diminuer les pv du joueur et de le faire reculer
     {
         if (collision.transform.tag == "Joueur")
         {

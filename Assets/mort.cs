@@ -16,7 +16,7 @@ public class mort : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() // tue le joueur si 0 pv et affiche les pv en haut de l'écran
     {
       if(hp == 0)
         {

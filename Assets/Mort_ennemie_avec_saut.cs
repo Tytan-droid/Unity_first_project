@@ -9,11 +9,10 @@ public class Mort_ennemie : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) // permet de tuer un ennemi en sautant dessus
     {
         if (collision.transform.tag == "Tuable_par_saut")
         {
-            Debug.Log("dedans");
             Destroy(collision.gameObject);
         }
     }

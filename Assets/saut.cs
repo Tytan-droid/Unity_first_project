@@ -19,7 +19,7 @@ public class saut : MonoBehaviour
     }
 
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision) //active le saut si sur sol
     {
         if (collision.transform.tag == "sol")
         {
@@ -28,7 +28,7 @@ public class saut : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() // permet de sauter
     {
         if (Input.GetKeyDown(KeyCode.Space) && CanJump)
         {

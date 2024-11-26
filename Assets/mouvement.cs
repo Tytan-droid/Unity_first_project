@@ -19,7 +19,7 @@ public class mouvement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() // permet de déplacer le joueur en x
     {
         if(Input.GetKey(KeyCode.D))
         {
@@ -36,7 +36,7 @@ public class mouvement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
-    void flip(float vx)
+    void flip(float vx) //permet de retourner le joueur
     {
         if((vx>0 && transform.localScale.x < 0) || (vx<0 && transform.localScale.x > 0))
         {

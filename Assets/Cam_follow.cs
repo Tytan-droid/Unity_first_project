@@ -11,7 +11,7 @@ public class Cam_follow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //permet de fixer la caméra au joueur
     {
         transform.position=new Vector3(GameObject.Find("joueur").transform.position.x,transform.position.y,transform.position.z);
     }
