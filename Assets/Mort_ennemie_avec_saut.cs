@@ -11,8 +11,7 @@ public class Mort_ennemie : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.name);
-        if (collision.transform.tag == "Ennemi")
+        if (collision.transform.tag == "Tuable_par_saut")
         {
             Debug.Log("dedans");
             Destroy(collision.gameObject);

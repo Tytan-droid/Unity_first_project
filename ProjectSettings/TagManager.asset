@@ -7,6 +7,7 @@ TagManager:
   - sol
   - Joueur
   - Joueur_pied
+  - Tuable_par_saut
   - Ennemi
   layers:
   - Default

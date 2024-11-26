@@ -10,6 +10,9 @@ public class follow_player : MonoBehaviour
 
     private Vector2 posdprt;
 
+    public float kbx;
+    public float kby;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,18 @@ public class follow_player : MonoBehaviour
         if (collision.transform.tag == "Joueur")
         {
             collision.gameObject.GetComponent<mort>().hp -= 1;
+            if (collision.transform.position.x > transform.position.x)
+            {
+                Debug.Log("droite");
+                collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(kbx, kby) / Time.deltaTime);
+            }
+            else
+            {
+                Debug.Log("gauche");
+                collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(-kbx, kby) / Time.deltaTime);
+            }
+
+
         }
     }
 }

@@ -24,14 +24,24 @@ public class mouvement : MonoBehaviour
         if(Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            flip(rb.velocity.x);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            flip(rb.velocity.x);
         }
         else 
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+    }
+    void flip(float vx)
+    {
+        if((vx>0 && transform.localScale.x < 0) || (vx<0 && transform.localScale.x > 0))
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+
     }
 }
