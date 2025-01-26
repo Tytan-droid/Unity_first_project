@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mort : MonoBehaviour
 {
-
+    public Canvas gameover;
     public int hp;
+    public int invicibility = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameover = GameObject.Find("Game_over").GetComponent<Canvas>();
+        gameover.enabled = false;
     }
 
     // Update is called once per frame
@@ -20,8 +23,8 @@ public class mort : MonoBehaviour
     {
       if(hp == 0)
         {
-            Destroy(gameObject);
-
+            gameover.enabled = true;
+            Time.timeScale = 0f;
 
         }
         GameObject.Find("Text_Ui_HP").GetComponent<TextMeshProUGUI>().text = "HP : " + hp;

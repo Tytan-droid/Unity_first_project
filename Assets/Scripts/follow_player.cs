@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class follow_player : MonoBehaviour
 {
@@ -39,23 +41,31 @@ public class follow_player : MonoBehaviour
         {
             rb.velocity = new Vector2(-speedennemi, rb.velocity.y);
         }
+
+        if (GameObject.Find("joueur").GetComponent<mort>().invicibility > 0)
+        {
+            GameObject.Find("joueur").GetComponent<mort>().invicibility--;
+        }
+        if (GameObject.Find("joueur").GetComponent<mort>().invicibility < 0)
+        {
+            GameObject.Find("joueur").GetComponent<mort>().invicibility = 0;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision) // permet de diminuer les pv du joueur et de le faire reculer
     {
-        if (collision.transform.tag == "Joueur")
+        if (collision.transform.tag == "Joueur" && collision.gameObject.GetComponent<mort>().invicibility == 0)
         {
             collision.gameObject.GetComponent<mort>().hp -= 1;
             if (collision.transform.position.x > transform.position.x)
             {
-                Debug.Log("droite");
-                collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(kbx, kby) / Time.deltaTime);
+                collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(kbx, kby) * Time.deltaTime);
+                collision.gameObject.GetComponent<mort>().invicibility = 5;
             }
             else
             {
-                Debug.Log("gauche");
-                collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(-kbx, kby) / Time.deltaTime);
+                collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(-kbx, kby) * Time.deltaTime);
+                collision.gameObject.GetComponent<mort>().invicibility = 5;
             }
-
 
         }
     }

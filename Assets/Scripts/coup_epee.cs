@@ -20,7 +20,7 @@ public class coup_epee : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) //coup d'épée si ennemie touche l'épée
     {
-        if (collision.transform.tag == "ennemi" || collision.transform.tag == "Tuable_par_saut")
+        if (collision.transform.tag == "ennemi" || collision.transform.tag == "Tuable_par_saut_et_épée" || collision.transform.tag == "Tuable_par_épée")
         {
             Destroy(collision.gameObject);
         }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8835417302660926071}
   - component: {fileID: 7547095883503972033}
   m_Layer: 0
-  m_Name: ennemi
+  m_Name: "ennemi_tuable_par_saut_et_\xE9p\xE9e"
   m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

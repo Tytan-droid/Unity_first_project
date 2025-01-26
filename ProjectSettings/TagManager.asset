@@ -10,6 +10,8 @@ TagManager:
   - Tuable_par_saut
   - Ennemi
   - "\xE9p\xE9e"
+  - "Tuable_par_saut_et_\xE9p\xE9e"
+  - "Tuable_par_\xE9p\xE9e"
   layers:
   - Default
   - TransparentFX
