@@ -8,6 +8,7 @@ public class mort : MonoBehaviour
 {
     public Canvas gameover;
     public int hp;
+    public int money;
     public int invicibility = 0;
 
 
@@ -28,5 +29,6 @@ public class mort : MonoBehaviour
 
         }
         GameObject.Find("Text_Ui_HP").GetComponent<TextMeshProUGUI>().text = "HP : " + hp;
+        GameObject.Find("Text_Ui_money").GetComponent<TextMeshProUGUI>().text = "Money : " + money;
     }
 }
